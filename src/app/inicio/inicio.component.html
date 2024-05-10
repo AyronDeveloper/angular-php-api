@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>INICIO</h1>
+    <div class="food" *ngIf="loading; else falseLoading">
+        <div class="food__content">
+            <article class="food__card" *ngFor="let com of comidasList">
+                <img class="food__img" [src]="com.imagen" alt="imagen comida">
+                <h3 class="food__title">{{com.nombre}}</h3>
+                <div class="food__options">
+                    <a [routerLink]="['edit',com.id]">Editar</a>
+                    <button>Eliminar</button>
+                </div>
+            </article>
+        </div>
+    </div>
+    <ng-template #falseLoading>
+        <div class="food__loader"><span class="loader"></span></div>
+    </ng-template>
+</div>

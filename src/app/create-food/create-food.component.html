@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>AÑADIR COMIDA</h1>
+    <div class="create__content">
+        <div class="create__image">
+            <div *ngIf="imgPrev==null;else imgPrevImage" class="create__img_previus">
+                <span class="create__img_ico">ICO</span>
+            </div>
+            <ng-template #imgPrevImage>
+                <img [src]="imgPrev" alt="">
+            </ng-template>
+        </div>
+        <form class="create__form">
+            <input class="form__input" type="text">
+            <input class="form__input_file" type="file">
+            <label class="form__btn_img" for="imagen">
+                <span class="btn__img_text">Agregar Imagen</span>
+                <span class="btn__img_ico">ico</span>
+            </label>
+            <button class="btn__create">AGREGAR</button>
+        </form>
+    </div>
+</div>

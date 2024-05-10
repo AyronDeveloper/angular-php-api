@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>EDITAR</h1>
+    <div class="edit__content">
+        <div class="edit__image">
+            <img *ngIf="imgPrev==null; else imgPrevImage" class="edit__img" [src]="image" alt="">
+            <ng-template #imgPrevImage>
+                <img class="edit__img" [src]="imgPrev" alt="imagen previa">
+            </ng-template>
+        </div>
+        <form [formGroup]="formularioEdit" class="edit__form" (submit)="handleSubmit($event)">
+            <input class="form__input" type="text" formControlName="nombre">
+            <input class="form__input_file" type="file" id="imagen" (change)="handleFile($event)">
+            <label class="form__btn_img" for="imagen">
+                <span class="btn__img_text">Agregar Imagen</span>
+                <span class="btn__img_ico">ico</span>
+            </label>
+            <button class="btn__update">AGREGAR</button>
+        </form>
+    </div>
+</div>
