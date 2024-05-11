@@ -7,7 +7,7 @@
                 <h3 class="food__title">{{com.nombre}}</h3>
                 <div class="food__options">
                     <a [routerLink]="['edit',com.id]">Editar</a>
-                    <button>Eliminar</button>
+                    <button (click)="handleDelete(com.id)">Eliminar</button>
                 </div>
             </article>
         </div>

@@ -21,5 +21,14 @@ export class InicioComponent implements OnInit{
       })
     }
 
+    handleDelete(id:number):void{
+      console.log(id)
+      this._apiService.deleteComida(Number(id)).subscribe((response:IComidas)=>{
+        console.log(response)
+      })
+      this.comidasList=this.comidasList.filter((com)=>com.id!==id)
+
+    }
+
   
 }

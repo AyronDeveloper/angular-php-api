@@ -3,18 +3,18 @@
     <div class="create__content">
         <div class="create__image">
             <div *ngIf="imgPrev==null;else imgPrevImage" class="create__img_previus">
-                <span class="create__img_ico">ICO</span>
+                <span class="create__img_ico"><i class="fa-solid fa-image"></i></span>
             </div>
             <ng-template #imgPrevImage>
-                <img [src]="imgPrev" alt="">
+                <img class="create__img" [src]="imgPrev" alt="">
             </ng-template>
         </div>
-        <form class="create__form">
-            <input class="form__input" type="text">
-            <input class="form__input_file" type="file">
+        <form [formGroup]="formularioCreate" class="create__form" (submit)="handleSubmit($event)">
+            <input class="form__input" type="text" formControlName="nombre">
+            <input class="form__input_file" type="file" id="imagen" (change)="handlefile($event)">
             <label class="form__btn_img" for="imagen">
                 <span class="btn__img_text">Agregar Imagen</span>
-                <span class="btn__img_ico">ico</span>
+                <span class="btn__img_ico"><i class="fa-regular fa-image"></i></span>
             </label>
             <button class="btn__create">AGREGAR</button>
         </form>

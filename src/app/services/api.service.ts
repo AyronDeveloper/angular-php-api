@@ -20,7 +20,7 @@ export class ApiService {
     return this._httpClient.get<IComidas>(`${this.baseUrl}comidas/${id}`)
   }
 
-  public createComida(form: IComidas):Observable<IComidas>{
+  public createComida(form: IComidas|FormData):Observable<IComidas>{
     return this._httpClient.post<IComidas>(`${this.baseUrl}crearComida`, form)
   }
 

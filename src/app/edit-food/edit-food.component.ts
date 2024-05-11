@@ -74,7 +74,7 @@ export class EditFoodComponent implements OnInit {
     //console.log(this.formularioEdit.get("nombre")?.value)
 
     this._apiService.updateComida(Number(this.id),form).subscribe((response: IComidas)=>{
-      
+      console.log(response)
     })
   }
 
